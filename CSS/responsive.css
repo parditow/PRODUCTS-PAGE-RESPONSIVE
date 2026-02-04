@@ -7,7 +7,8 @@
     }
 
     .productos {
-        /* tarjetas en fila como en PC */
+        /* tarjetas en fila como en PC, alineadas a la izquierda */
+        justify-content: flex-start;
     }
 
     .tarjeta {
@@ -18,6 +19,7 @@
     .tarjeta img {
         width: 140px;
         height: 80px;
+        display: block;
     }
 
     /* texto más pequeño en móvil */
@@ -26,7 +28,14 @@
     }
 
     .tarjeta p {
-        font-size: 10px;
+        font-size: 12px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* alinear a la izquierda en móvil */
+    .tarjeta {
+        text-align: left;
     }
 }
 
@@ -80,5 +89,40 @@
 
     .productos {
         margin-top: 30px;
+    }
+}
+
+/* PORTRAIT: tarjetas en columna */
+@media (max-width: 600px) and (orientation: portrait) {
+    .productos {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tarjeta {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    /* imágenes más grandes en portrait */
+    .tarjeta img {
+        width: 270px;
+        height: 150px;
+        margin: 0 auto 15px 0;
+    }
+
+    /* texto normal en portrait */
+    .tarjeta h2 {
+        font-size: 16px;
+    }
+
+    .tarjeta p {
+        font-size: 12px;
+    }
+
+    /* centrar en portrait */
+    .tarjeta {
+        text-align: center;
     }
 }

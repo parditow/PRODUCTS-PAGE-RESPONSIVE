@@ -71,6 +71,8 @@ main {
     /* MUY IMPORTANTE */
     overflow: hidden;
     /* evita que el zapato se junte con el hover */
+
+    cursor: pointer;
 }
 
 /* IMAGEN DEL ZAPATO */
@@ -86,7 +88,7 @@ main {
 }
 
 /* ANIMACIÓN DEL ZAPATO (SOLO LA IMAGEN) */
-.tarjeta:hover img {
+.tarjeta:hover img, .tarjeta:focus img {
     transform:
         scale(1.12) rotate(-25deg) translateX(-15px);
 }
@@ -124,6 +126,21 @@ main {
 }
 
 /* PRECIO CAMBIA DE COLOR */
-.tarjeta:hover .precio {
+.tarjeta:hover .precio, .tarjeta:focus .precio {
     background-color: #00b050;
+}
+
+/* ANIMACIÓN DE LA TARJETA EN MÓVIL */
+.tarjeta:focus {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px);
+}
+
+/* ANIMACIÓN DEL TEXTO EN MÓVIL */
+.tarjeta:focus h2 {
+    color: #00b050;
+}
+
+.tarjeta:focus p {
+    color: #333;
 }
