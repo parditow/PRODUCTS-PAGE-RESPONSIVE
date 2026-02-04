@@ -1,0 +1,33 @@
+
+/* RESET GENERAL */
+/* Quitamos márgenes raros y usamos caja correcta */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO GENERAL DE LA PÁGINA */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #111;
+}
+
+/* ============================= */
+/* HEADER (PARTE SUPERIOR) */
+/* ============================= */
+header {
+    background-color: #2b2b2b;
+    padding: 15px;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+nav {
+    display: flex;
+    /* pone los links en línea */
+    justify-content: center;
+    /* los centra */
+    gap: 25px;
+    /* espacio entre ellos */
+}
