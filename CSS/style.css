@@ -1,60 +1,54 @@
 /* RESET GENERAL */
-/* Quitamos márgenes raros y usamos caja correcta */
+/* Quitamos márgenes y usamos caja correcta */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ESTILO GENERAL DE LA PÁGINA */
+/* ESTILO GENERAL */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     color: #111;
 }
 
-/* HEADER (PARTE SUPERIOR) */
-
+/* HEADER */
 header {
     background-color: #2b2b2b;
     padding: 15px;
 }
 
-/* MENÚ DE NAVEGACIÓN */
+/* MENÚ */
 nav {
     display: flex;
-    /* pone los links en línea */
     justify-content: center;
-    /* los centra */
     gap: 25px;
-    /* espacio entre ellos */
 }
 
-/*LINK DEL MENU*/
 nav a {
     color: white;
     text-decoration: none;
     font-size: 14px;
 }
 
-/*EFECTO CURSOR*/
 nav a:hover {
     text-decoration: underline;
 }
 
-/*CONTENITO PRINCIPAL*/
+/* CONTENIDO PRINCIPAL */
 main {
     padding: 40px 20px;
 }
 
-/*CONTENEDOR DE PRODUCTOS*/
+/* CONTENEDOR DE PRODUCTOS */
 .productos {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-/* TARJETA DE PRODUCTO */
+/* TARJETA */
 .tarjeta {
     background-color: white;
     width: 260px;
@@ -64,33 +58,62 @@ main {
 
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 
+    /* MUY IMPORTANTE */
     overflow: hidden;
-    /* para el efecto 3D */
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    perspective: 800px;
+    /* evita que el zapato se junte con el hover */
 }
 
-/* EFECTO AL PASAR EL CURSOR POR LA TARJETA */
-.tarjeta:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    transform: translateY(-4px);
-}
-
-/* IMAGEN DEL PRODUCTO */
+/* IMAGEN DEL ZAPATO */
 .tarjeta img {
-    width: 160px;
-    height: 90px;
+    width: 200px;
+    height: 180px;
     object-fit: contain;
     margin-bottom: 15px;
 
+    /* animación SOLO de la imagen */
     transition: transform 0.6s ease;
-    /* animación suave */
+    will-change: transform;
 }
 
-/* ZOOM + GIRO DE LA ZAPATILLA */
+/* ANIMACIÓN DEL ZAPATO (SOLO LA IMAGEN) */
 .tarjeta:hover img {
     transform:
-        scale(1.12)/* zoom */
-        rotate(-25deg)
-        translateX(-15px); 
+        scale(1.12) rotate(-25deg) translateX(-15px);
+}
+
+/* TÍTULO DEL PRODUCTO */
+.tarjeta h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* TEXTO */
+.tarjeta p {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* PRECIO */
+.precio {
+    background-color: #2b2b2b;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: bold;
+
+    transition: background-color 0.3s ease;
+}
+
+/* PRECIO CAMBIA DE COLOR */
+.tarjeta:hover .precio {
+    background-color: #00b050;
 }
