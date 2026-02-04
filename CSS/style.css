@@ -19,6 +19,16 @@ header {
     padding: 15px;
 }
 
+/* HAMBURGUESA OCULTA EN PC */
+.hamburguesa {
+    display: none;
+}
+
+/* CHECKBOX OCULTO EN PC */
+#menu-toggle {
+    display: none;
+}
+
 /* MENÚ */
 nav {
     display: flex;

@@ -7,12 +7,78 @@
     }
 
     .productos {
-        flex-direction: column;
-        align-items: center;
+        /* tarjetas en fila como en PC */
     }
 
     .tarjeta {
-        width: 90%;
-        max-width: 320px;
+        width: 260px;
+    }
+
+    /* imágenes más pequeñas en móvil */
+    .tarjeta img {
+        width: 140px;
+        height: 80px;
+    }
+
+    /* texto más pequeño en móvil */
+    .tarjeta h2 {
+        font-size: 12px;
+    }
+
+    .tarjeta p {
+        font-size: 10px;
+    }
+}
+
+/* MENÚ HAMBURGUESA (solo móvil) */
+@media (max-width: 600px) {
+
+    /* Header ahora alinea hamburguesa */
+    header {
+        position: relative;
+    }
+
+    /* Ocultamos el nav normal por defecto */
+    nav.menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #2b2b2b;
+        padding: 15px;
+        position: relative;
+        /* empuja el contenido hacia abajo */
+    }
+
+    /* El checkbox NO se ve */
+    #menu-toggle {
+        display: none;
+    }
+
+    /* Icono hamburguesa */
+    .hamburguesa {
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        display: block;
+        text-align: right;
+    }
+
+    /* Cuando el checkbox está activado, mostramos el menú */
+    #menu-toggle:checked+.hamburguesa+nav.menu {
+        display: flex;
+    }
+
+    /* Links dentro del menú móvil */
+    nav.menu a {
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    nav.menu a:hover {
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .productos {
+        margin-top: 30px;
     }
 }
